@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * @author 600006
  * @version 1.0
@@ -7,6 +5,10 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Integer[] a={1,2,3,4,12,12,12,15,29,94};
+
+        Main main = new Main();
+        main.calWeight();
+
 //        System.out.println(binarySearch(a,1));
 //        System.out.println(search(a,1));
 //
@@ -19,8 +21,8 @@ public class Main {
 //        System.out.println(arrt[0].length);
 //
 //        System.out.println(search(arrt,10));
-        StringBuffer stringBuffer = new StringBuffer(" helloworld");
-        System.out.println(replaceSpace(stringBuffer));
+//        StringBuffer stringBuffer = new StringBuffer(" helloworld");
+//        System.out.println(replaceSpace(stringBuffer));
 
     }
 
@@ -113,6 +115,38 @@ public class Main {
         }
 
         return new String(temp);
+    }
+
+    /**
+     * 根据权重计算出概率
+     *
+     */
+    public void calWeight(){
+        double one = 1;
+        double two = 2;
+        double three = 3;
+        double four = 4;
+
+        int oneSum = 0;
+        int twoSum = 0;
+        int threeSum = 0;
+        int fourSum = 0;
+
+        double sum = one+two+three+four;
+        for(int i=0;i<100000;i++){
+            double num = Math.random();
+            if(0<=num && num<(one/sum)){
+                oneSum ++;
+            }else if((one/sum)<=num && num<((two/sum)+(one/sum))){
+                twoSum ++;
+            }else if(((two/sum)+(one/sum))<=num && num<((three/sum)+(two/sum)+(one/sum))){
+                threeSum ++;
+            }else if((three/sum)+(two/sum)+(one/sum)<=num && num<1){
+                fourSum ++;
+            }
+        }
+        System.out.println(oneSum + "----" + twoSum + "----" + threeSum + "----" +fourSum);
+
     }
 
 }

@@ -1,7 +1,5 @@
 package thread;
 
-import java.util.HashMap;
-
 /**
  * @author 600006
  * @version 1.0

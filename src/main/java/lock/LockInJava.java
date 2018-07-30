@@ -1,37 +1,23 @@
 package lock;
 
+import com.sun.corba.se.impl.orbutil.concurrent.Mutex;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 /**
  * @author 600006
  * @version 1.0
  */
-public class LockInJava {
+public class LockInJava{
     public static void main(String[] args) {
-        short a = 128;
-        byte b = (byte) a;
-        System.out.println(b);
+        Lock lock = new ReentrantLock();
+        lock.lock();
 
-        binaryToDecimal(a);
+        try{
 
-        System.out.println("-----");
-        binaryToDecimal(b);
-
-
-        char[] c = {'a','b','c','d','e'};
-        String str = "abcde";
-
-        System.out.println(str.equals(c));
-
-    }
-
-    public static void binaryToDecimal(short n) {
-        for(int i = 31; i >= 0; i--){
-            System.out.print(n >>> i & 1);
+        }finally {
+            lock.unlock();
         }
     }
 
-    public static void binaryToDecimal(byte n) {
-        for(int i = 7; i >= 0; i--){
-            System.out.print(n >>> i & 1);
-        }
-    }
 }

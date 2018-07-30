@@ -74,9 +74,9 @@ public class SynchronizedTest extends Thread{
 
     public void run(){
 
-//        addOne();
-//        addTwo();
-//        addThree();
+        addOne();
+        addTwo();
+        addThree();
         addFour();
     }
 

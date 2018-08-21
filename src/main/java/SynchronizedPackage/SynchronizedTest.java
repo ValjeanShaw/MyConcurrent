@@ -5,15 +5,15 @@ import lombok.Data;
 /**
  * @author xiaoran
  * @version 1.0
- *
- *
+ * <p>
+ * <p>
  * 1.修饰实例方法
  * 2.修饰静态方法
  * 3.同步实例方法中的代码块
  * 4.同步静态方法中的代码块
  */
 @Data
-public class SynchronizedTest extends Thread{
+public class SynchronizedTest extends Thread {
     private Integer num = 100;
 
     private static Integer count = 200;
@@ -22,57 +22,57 @@ public class SynchronizedTest extends Thread{
 
     private static Integer counter = 400;
 
-    public synchronized void addOne(){
-        try{
+    public synchronized void addOne() {
+        try {
             Thread.sleep(1000);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         num++;
-        System.out.println(this.getId()+"  "+num+"  "+System.currentTimeMillis());
+        System.out.println(this.getId() + "  " + num + "  " + System.currentTimeMillis());
     }
 
-    public static synchronized void addTwo(){
-        try{
+    public static synchronized void addTwo() {
+        try {
             Thread.sleep(1000);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         count += 2;
-        System.out.println("  "+count+"  "+System.currentTimeMillis());
+        System.out.println("  " + count + "  " + System.currentTimeMillis());
     }
 
 
-    public void addThree(){
+    public void addThree() {
 
         //使用了“this”，即为调用add方法的实例本身。
-        synchronized (this){
-            try{
+        synchronized (this) {
+            try {
                 Thread.sleep(1000);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
             number += 3;
         }
-        System.out.println("  "+number+"  "+System.currentTimeMillis());
+        System.out.println("  " + number + "  " + System.currentTimeMillis());
     }
 
 
-    public static void addFour(){
-        synchronized (SynchronizedTest.class){
-            try{
+    public static void addFour() {
+        synchronized (SynchronizedTest.class) {
+            try {
                 Thread.sleep(1000);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
             counter += 4;
         }
-        System.out.println("  "+counter+"  "+System.currentTimeMillis());
+        System.out.println("  " + counter + "  " + System.currentTimeMillis());
     }
 
-    public void run(){
+    public void run() {
 
         addOne();
         addTwo();

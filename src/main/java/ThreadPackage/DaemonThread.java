@@ -5,26 +5,25 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author xiaoran
  * @version 1.0
- *
+ * <p>
  * 通过setDaemon设置为守护线程
- *
+ * <p>
  * 当用户线上不存在的时候，守护线程会理解被清理掉，jvm清理，不会等待线程执行完毕
- *
  */
-public class DaemonThread extends Thread{
+public class DaemonThread extends Thread {
     @Override
     public void run() {
-        try{
+        try {
             System.out.println("DaemonThread running start");
             TimeUnit.SECONDS.sleep(1);
             System.out.println("DaemonThread running end");
-        } catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
             System.out.println("DaemonThread  InterruptedException");
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("DaemonThread  exception");
-        }finally {
+        } finally {
             System.out.println("DaemonThread finally");
         }
     }

@@ -3,20 +3,18 @@ package ThreadPackage;
 /**
  * @author xiaoran
  * @version 1.0
- *
+ * <p>
  * 继承Thread 类,重写run方法
- *
- *
  */
-public class RunByThread extends Thread{
+public class RunByThread extends Thread {
 
     @Override
-    public void run(){
-        while(true){
-            try{
+    public void run() {
+        while (true) {
+            try {
                 Thread.sleep(5000);
                 System.out.println("running by thread......");
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println(232);
                 e.printStackTrace();
             }

@@ -1,4 +1,4 @@
-package synchronizedTest;
+package SynchronizedPackage;
 
 /**
  * @author: xiaoran

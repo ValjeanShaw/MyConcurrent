@@ -1,9 +1,18 @@
 # 这是学习java并发中，实战的代码
-> 推荐书籍《java并发编程的艺术》，这本书在业界的名气有多大就不赘述了  
-> 本项目的知识储备和实例，均来自这本书
+> 推荐书籍《java并发编程的艺术》  
+
 
 ## 项目结构
  * lock包       java锁的知识
- * synchronizedTest   synchronized和volatile关键字的使用
+ * SynchronizedPackage   synchronized和volatile关键字的使用
  * thread包     java线程知识
  * threadPool   java线程池知识
+ 
+## 代码涵盖的知识点
+SynchronizedPackage包下的知识点
+* synchronized方法的基本使用
+* synchronized方法的两个细节： 
+    1. synchronized锁是可重入锁：当前对象不同方法可重入；父子类方法相互调用可重入。
+    2. synchronized锁抛出异常时，会释放锁（异常抛出当前锁控制的区域）
+    
+ 

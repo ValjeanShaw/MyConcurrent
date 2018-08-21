@@ -1,13 +1,12 @@
-package threadPool;
+package ThreadPoolPackage;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author 600006
+ * @author xiaoran
  * @version 1.0
  *
 

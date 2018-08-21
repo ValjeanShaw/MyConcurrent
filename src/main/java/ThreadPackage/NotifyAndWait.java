@@ -1,11 +1,11 @@
-package thread;
+package ThreadPackage;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author 600006
+ * @author xiaoran
  * @version 1.0
  *
  * 经典范式

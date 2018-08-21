@@ -1,7 +1,7 @@
-package thread;
+package ThreadPackage;
 
 /**
- * @author 600006
+ * @author xiaoran
  * @version 1.0
  *
  * 继承Thread 类,重写run方法

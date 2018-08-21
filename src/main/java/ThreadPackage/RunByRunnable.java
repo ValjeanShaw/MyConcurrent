@@ -1,7 +1,7 @@
-package thread;
+package ThreadPackage;
 
 /**
- * @author 600006
+ * @author xiaoran
  * @version 1.0
  *
  * 实现Runnable接口，重写run接口

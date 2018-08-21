@@ -1,4 +1,4 @@
-package synchronizedTest;
+package SynchronizedPackage;
 
 /**
  * @author: xiaoran
@@ -8,24 +8,26 @@ package synchronizedTest;
  */
 public class SynchronizedException {
 
+    /**
+     * 当异常被即时处理掉，未抛出synchronized的修饰区，不会释放锁
+     */
     public synchronized void doOneThing() {
         int i = 0;
         while (true) {
             i++;
-            try{
+            try {
                 Thread.sleep(100);
-            }
-            catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             System.out.println("now,the i is:" + i);
 
-            try{
-                if(i == 10){
+            try {
+                if (i == 10) {
 
                     Integer.parseInt("a");
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 continue;
             }
@@ -33,19 +35,21 @@ public class SynchronizedException {
         }
     }
 
+    /**
+     * 异常抛出synchronized的修饰区，会释放锁
+     */
     public synchronized void doTwoThing() {
         int j = -100;
         while (true) {
             j--;
-            try{
+            try {
                 Thread.sleep(100);
-            }
-            catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             System.out.println("yes boy,the j is:" + j);
 
-            if(j == -110){
+            if (j == -110) {
                 Integer.parseInt("a");
             }
         }

@@ -1,9 +1,9 @@
-package synchronizedTest;
+package SynchronizedPackage;
 
 import lombok.Data;
 
 /**
- * @author 600006
+ * @author xiaoran
  * @version 1.0
  *
  *

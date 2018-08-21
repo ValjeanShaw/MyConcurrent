@@ -1,9 +1,9 @@
-package thread;
+package ThreadPackage;
 
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author 600006
+ * @author xiaoran
  * @version 1.0
  *
  * 通过setDaemon设置为守护线程

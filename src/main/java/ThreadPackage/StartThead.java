@@ -1,7 +1,7 @@
-package thread;
+package ThreadPackage;
 
 /**
- * @author 600006
+ * @author xiaoran
  * @version 1.0
  *
  * 从这里开始，包含以下内容

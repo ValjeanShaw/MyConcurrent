@@ -17,7 +17,7 @@
 ### 高并发基础
 
 #### 线程基础
-ThreadPackage包下的知识点
+`ThreadPackage`
 * java线程创建基础，两种创建模式
     1. 集成Thread类
     2. 实现Runnable接口
@@ -30,14 +30,14 @@ ThreadPackage包下的知识点
 
 #### synchonized
 
-SynchronizedPackage包下的知识点
+>SynchronizedPackage
 * synchronized方法的基本使用
 * synchronized方法的两个细节： 
     1. synchronized锁是可重入锁：当前对象不同方法可重入；父子类方法相互调用可重入。
     2. synchronized锁抛出异常时，会释放锁（异常抛出当前锁控制的区域）
    
 #### valotile 
-VolatilePackage包下的知识点
+>VolatilePackage
 * valotile 关键字的基本使用
 * valotile 关键字的非原子性验证，以及原子类 AtomicInteger的操作
     

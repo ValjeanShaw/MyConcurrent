@@ -23,6 +23,7 @@
     2. 实现Runnable接口
 * 线程的启动
 * 守护线程（Daemon Thread）的概念和使用
+* 加入线程中断概念和使用  interrupt
 * 线程间通知，wait和notify的使用（经典范式）
 * Thread.join()的使用
 * 线程变量ThreadLocal的使用

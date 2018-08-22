@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
  * 2.改变条件
  * 3.发送通知  notify() 和 notifyAll()方法
  */
-public class NotifyAndWait {
+public class WaitAndNotifyExample {
     static boolean flag = true;
     static Object lock = new Object();
 

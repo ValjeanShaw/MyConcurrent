@@ -13,7 +13,7 @@ import java.util.List;
  * 另一个线程等待，接收第一个线程通知，当接收到通知后再进行之后的工作
  * <p>
  * 1.wait和notify必须配合synchronized方法一起使用
- * 2.
+ * 2.wait方法释放锁，notify方法不释放锁
  */
 public class WaitAndNotify {
     private volatile static List<String> list = new ArrayList<>();

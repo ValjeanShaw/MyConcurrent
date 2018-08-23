@@ -18,13 +18,20 @@
 
 #### 线程基础
 `ThreadPackage`
+
+线程状态
+
 * java线程创建基础，两种创建模式
     1. 集成Thread类
     2. 实现Runnable接口
 * 线程的启动
 * 守护线程（Daemon Thread）的概念和使用
 * 加入线程中断概念和使用  interrupt
+
+线程通信
+
 * 线程间通知，wait和notify的使用（经典范式）
+* 线程间IO传输，使用管道输入输出流实现 (Piped)
 * Thread.join()的使用
 * 线程变量ThreadLocal的使用
 

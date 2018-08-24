@@ -26,10 +26,12 @@ public class WaitAndNotifyExample {
     static Object lock = new Object();
 
     public static void main(String[] args) {
-        Thread notifyThead = new Thread(new notify(), "notifyThread");
-        Thread waitThead = new Thread(new wait(), "waitThead");
+        Thread notifyThead = new Thread(new Notify(), "notifyThread");
+        Thread waitThead = new Thread(new Wait(), "waitThead");
+        Thread waitLongTimeThread = new Thread(new WaitLongTime(), "waitLongTime");
 
         waitThead.start();
+        waitLongTimeThread.start();
         try {
             TimeUnit.SECONDS.sleep(2);
         } catch (Exception e) {
@@ -39,8 +41,9 @@ public class WaitAndNotifyExample {
     }
 
 
-    static class notify implements Runnable {
+    static class Notify implements Runnable {
 
+        @Override
         public void run() {
             synchronized (lock) {
                 //flag变为false
@@ -62,8 +65,9 @@ public class WaitAndNotifyExample {
     }
 
 
-    static class wait implements Runnable {
+    static class Wait implements Runnable {
 
+        @Override
         public void run() {
             //flag为false时，执行任务
             synchronized (lock) {
@@ -80,6 +84,27 @@ public class WaitAndNotifyExample {
                 System.out.println(Thread.currentThread() + "任务完成flag is false,wait:" + new SimpleDateFormat("HH:mm:ss").format(new Date()));
             }
 
+        }
+    }
+
+    static class WaitLongTime implements Runnable {
+
+        @Override
+        public void run() {
+            //超时等待
+            synchronized (lock){
+                while (flag) {
+                    try {
+                        System.out.println(Thread.currentThread() + "flag is true,wait long long times:" + new SimpleDateFormat("HH:mm:ss").format(new Date()));
+                        //释放锁
+                        lock.wait(1000);
+                        System.out.println("老子等不了了。。。");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                System.out.println("去你的long long ago,老子不等了，先出来了");
+            }
         }
     }
 }

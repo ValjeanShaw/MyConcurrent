@@ -38,7 +38,6 @@
 实例
 使用wait和notify模拟一个阻塞队列
 
-
 #### synchonized
 
 `SynchronizedPackage`
@@ -53,3 +52,7 @@
 * volatile 关键字的非原子性验证，以及原子类 AtomicInteger的操作
     
  
+#### 设计模式
+* 多线程情况下，使用较多的两种单例模式
+    1. 静态内部类 （推荐使用）
+    2. 双重校验

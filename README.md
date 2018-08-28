@@ -9,6 +9,7 @@
  * VolatilePackage       volatile相关知识
  * LockPackage           java锁的知识
  * ThreadPoolPackage     java线程池知识
+ * DesignPatterns        多线程相关的设计模式
  
  **接下来请看详细内容**
  
@@ -53,6 +54,7 @@
     
  
 #### 设计模式
+`DesignPatterns`
 * 多线程情况下，使用较多的两种单例模式
     1. 静态内部类 （推荐使用）
     2. 双重校验

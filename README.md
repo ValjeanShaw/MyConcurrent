@@ -35,6 +35,9 @@
 * Thread.join()的使用
 * 线程变量ThreadLocal的使用
 
+实例
+使用wait和notify模拟一个阻塞队列
+
 
 #### synchonized
 
@@ -46,7 +49,7 @@
    
 #### valotile 
 `VolatilePackage`
-* valotile 关键字的基本使用
-* valotile 关键字的非原子性验证，以及原子类 AtomicInteger的操作
+* volatile 关键字的基本使用
+* volatile 关键字的非原子性验证，以及原子类 AtomicInteger的操作
     
  

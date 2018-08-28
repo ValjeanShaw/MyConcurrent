@@ -67,4 +67,4 @@
 * ConcurrentHashMap (设计原理比较重要，经常拿来和HashMap进行比较)
 
 以上集合不做code
-* CopyOnWrite容器
+* CopyOnWrite容器  具体看源码的add方法

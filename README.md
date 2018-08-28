@@ -15,7 +15,7 @@
  
 ## 代码涵盖的知识点
 
-### 高并发基础
+### 并发基础
 
 #### 线程基础
 `ThreadPackage`
@@ -58,3 +58,13 @@
 * 多线程情况下，使用较多的两种单例模式
     1. 静态内部类 （推荐使用）
     2. 双重校验
+    
+### 并发进阶
+
+#### 一些基础的并发类容器
+`ConcurrentCollecntions`
+* Vector
+* ConcurrentHashMap (设计原理比较重要，经常拿来和HashMap进行比较)
+
+以上集合不做code
+* CopyOnWrite容器

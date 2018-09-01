@@ -83,3 +83,4 @@
 #### 并发工具类
 `ConcurrentUtils`
 * CountDownLtch的使用
+* CyclicBarrier的使用

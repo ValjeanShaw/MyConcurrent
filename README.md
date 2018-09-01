@@ -10,6 +10,7 @@
  * LockPackage           java锁的知识
  * ThreadPoolPackage     java线程池知识
  * DesignPatterns        多线程相关的设计模式
+ * ConcurrentUtils       JDK提供的并发的工具类
  
  **接下来请看详细内容**
  
@@ -77,3 +78,8 @@
 * Executors中的schduleThreadPool
 * Executors中的singleThreadPool
 * 线程中callback和feture的简单使用
+* 线程工厂的使用
+
+#### 并发工具类
+`ConcurrentUtils`
+* CountDownLtch的使用

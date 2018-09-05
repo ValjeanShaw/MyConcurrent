@@ -5,31 +5,29 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @author: xiaoran
  * @date: 2018-09-02 17:54
- *
+ * <p>
  * 重入锁
- *
  */
-public class ReentrantLockDemo implements Runnable{
+public class ReentrantLockDemo implements Runnable {
 
     public static ReentrantLock lock = new ReentrantLock();
-    public static int i=0;
+    public static int i = 0;
 
     @Override
     public void run() {
-        for(int i=0;i<1000;i++){
+        for (int i = 0; i < 1000; i++) {
             lock.lock();
             //可多重加锁
             lock.lock();
             lock.lock();
-            try{
+            try {
                 i++;
-            }finally {
+            } finally {
                 //释放锁
                 lock.unlock();
                 lock.unlock();
                 lock.unlock();
             }
-
         }
 
     }

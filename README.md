@@ -85,3 +85,9 @@
 * CountDownLtch的使用
 * CyclicBarrier的使用
 * Semaphore的使用
+
+#### java中的Lock
+`LockPackage`
+* Lock的基本模型
+* ReentrantLock的使用
+* ReentrantLock公平锁的使用

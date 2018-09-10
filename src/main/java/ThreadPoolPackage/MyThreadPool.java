@@ -5,20 +5,18 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author xiaoran
  * @version 1.0
  * <p>
  * 自定义线程池
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * 饱和策略：Abort 策略, CallerRuns 策略,Discard策略，DiscardOlds策略。
- *
+ * <p>
  * 自定义拒绝策略
- *
  */
 public class MyThreadPool {
 
@@ -69,7 +67,6 @@ public class MyThreadPool {
         threadPoolExecutor.shutdown();
 
     }
-
 
 
     /**
@@ -142,7 +139,7 @@ public class MyThreadPool {
                 public void run() {
                     try {
                         Thread.sleep(1000);
-                        System.out.println("当前线程编号："+index+" 线程池数字  "+ Thread.currentThread().getId() + "--->" + Thread.currentThread().getName());
+                        System.out.println("当前线程编号：" + index + " 线程池数字  " + Thread.currentThread().getId() + "--->" + Thread.currentThread().getName());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -169,7 +166,7 @@ public class MyThreadPool {
                 public void run() {
                     try {
                         Thread.sleep(1000);
-                        System.out.println("当前线程编号："+index+"  线程池 "+ Thread.currentThread().getId() + "--->" + Thread.currentThread().getName());
+                        System.out.println("当前线程编号：" + index + "  线程池 " + Thread.currentThread().getId() + "--->" + Thread.currentThread().getName());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -188,7 +185,7 @@ public class MyThreadPool {
 
         BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(5);
         ThreadPoolExecutor threadPoolExecutor =
-                new ThreadPoolExecutor(5, 10, 1000, TimeUnit.MILLISECONDS, workQueue,new MyRejected());
+                new ThreadPoolExecutor(5, 10, 1000, TimeUnit.MILLISECONDS, workQueue, new MyRejected());
 
         for (int i = 0; i < 30; i++) {
             final int index = i;
@@ -197,7 +194,7 @@ public class MyThreadPool {
                 public void run() {
                     try {
                         Thread.sleep(1000);
-                        System.out.println("当前线程编号："+index+"  线程池 "+ Thread.currentThread().getId());
+                        System.out.println("当前线程编号：" + index + "  线程池 " + Thread.currentThread().getId());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -215,12 +212,12 @@ public class MyThreadPool {
 class MyRejected implements RejectedExecutionHandler {
 
 
-    public MyRejected(){
+    public MyRejected() {
     }
 
     @Override
     public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
-        System.out.println("现线程池中的情况为："+executor.getActiveCount());
+        System.out.println("现线程池中的情况为：" + executor.getActiveCount());
         System.out.println("当前被拒绝任务为：" + r.toString());
 
     }

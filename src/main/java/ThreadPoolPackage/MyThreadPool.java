@@ -2,6 +2,7 @@ package ThreadPoolPackage;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -11,6 +12,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @version 1.0
  * <p>
  * 自定义线程池
+ *
+ *
+ *
+ * 饱和策略：Abort 策略, CallerRuns 策略,Discard策略，DiscardOlds策略。
+ *
+ * 自定义拒绝策略
+ *
  */
 public class MyThreadPool {
 
@@ -20,7 +28,8 @@ public class MyThreadPool {
 //        myThreadPool.createPoolAbort();
 //        myThreadPool.createPoolCallerRuns();
 //        myThreadPool.createPoolDiscardOldest();
-        myThreadPool.createPoolDiscardPolicy();
+//        myThreadPool.createPoolDiscardPolicy();
+        myThreadPool.createPoolMyReject();
 
     }
 
@@ -61,12 +70,6 @@ public class MyThreadPool {
 
     }
 
-
-    /**
-     *
-     * 饱和策略分为：Abort 策略, CallerRuns 策略,Discard策略，DiscardOlds策略。
-     *
-     */
 
 
     /**
@@ -177,5 +180,49 @@ public class MyThreadPool {
         threadPoolExecutor.shutdown();
     }
 
+
+    /**
+     * DiscardPolicy   当任务添加到线程池中被拒绝时，线程池将丢弃被拒绝的任务。
+     */
+    public void createPoolMyReject() {
+
+        BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(5);
+        ThreadPoolExecutor threadPoolExecutor =
+                new ThreadPoolExecutor(5, 10, 1000, TimeUnit.MILLISECONDS, workQueue,new MyRejected());
+
+        for (int i = 0; i < 30; i++) {
+            final int index = i;
+            threadPoolExecutor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(1000);
+                        System.out.println("当前线程编号："+index+"  线程池 "+ Thread.currentThread().getId());
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
+
+        threadPoolExecutor.shutdown();
+    }
+
+
+}
+
+
+class MyRejected implements RejectedExecutionHandler {
+
+
+    public MyRejected(){
+    }
+
+    @Override
+    public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+        System.out.println("现线程池中的情况为："+executor.getActiveCount());
+        System.out.println("当前被拒绝任务为：" + r.toString());
+
+    }
 
 }

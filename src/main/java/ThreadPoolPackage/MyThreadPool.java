@@ -4,6 +4,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author xiaoran
@@ -12,10 +13,12 @@ import java.util.concurrent.TimeUnit;
  * 自定义线程池
  */
 public class MyThreadPool {
+
     public static void main(String[] args) {
         MyThreadPool myThreadPool = new MyThreadPool();
 //        myThreadPool.createPoolOne();
-        myThreadPool.createPoolAbort();
+//        myThreadPool.createPoolAbort();
+        myThreadPool.createPoolCallerRuns();
 
     }
 
@@ -65,21 +68,21 @@ public class MyThreadPool {
 
 
     /**
-     * Abort  默认策略，新任务提交时直接抛出未检查的异常RejectedExecutionException，该异常可由调用者捕获。
+     * AbortPolicy  默认策略，新任务提交时直接抛出未检查的异常RejectedExecutionException，该异常可由调用者捕获。
      */
     public void createPoolAbort() {
         BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(5);
         ThreadPoolExecutor threadPoolExecutor =
                 new ThreadPoolExecutor(5, 10, 1000, TimeUnit.MILLISECONDS, workQueue, new ThreadPoolExecutor.AbortPolicy());
 
-        for(int i=0;i<30;i++){
+        for (int i = 0; i < 30; i++) {
             threadPoolExecutor.execute(new Runnable() {
                 @Override
                 public void run() {
-                    try{
+                    try {
                         Thread.sleep(100);
-                        System.out.println("当前线程："+Thread.currentThread().getId()+"--->"+Thread.currentThread().getName());
-                    }catch (InterruptedException e){
+                        System.out.println("当前线程：" + Thread.currentThread().getId() + "--->" + Thread.currentThread().getName());
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -89,6 +92,33 @@ public class MyThreadPool {
         threadPoolExecutor.shutdown();
     }
 
+    /**
+     * CallerRunsPolicy 当任务添加到线程池中被拒绝时，会在线程池当前正在运行的Thread线程池中处理被拒绝的任务。
+     */
+    public void createPoolCallerRuns() {
+
+        BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(5);
+        ThreadPoolExecutor threadPoolExecutor =
+                new ThreadPoolExecutor(5, 10, 1000, TimeUnit.MILLISECONDS, workQueue, new ThreadPoolExecutor.CallerRunsPolicy());
+
+        for (int i = 0; i < 30; i++) {
+
+            threadPoolExecutor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+
+                        Thread.sleep(100);
+                        System.out.println("  当前线程：" + Thread.currentThread().getId() + "--->" + Thread.currentThread().getName());
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
+
+        threadPoolExecutor.shutdown();
+    }
 
 
 

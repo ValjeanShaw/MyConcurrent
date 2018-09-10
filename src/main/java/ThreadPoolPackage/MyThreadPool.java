@@ -19,7 +19,8 @@ public class MyThreadPool {
 //        myThreadPool.createPoolOne();
 //        myThreadPool.createPoolAbort();
 //        myThreadPool.createPoolCallerRuns();
-        myThreadPool.createPoolDiscardOldest();
+//        myThreadPool.createPoolDiscardOldest();
+        myThreadPool.createPoolDiscardPolicy();
 
     }
 
@@ -138,7 +139,34 @@ public class MyThreadPool {
                 public void run() {
                     try {
                         Thread.sleep(1000);
-                        System.out.println("当前线程编号："+index+"  线程池数字  "+ Thread.currentThread().getId() + "--->" + Thread.currentThread().getName());
+                        System.out.println("当前线程编号："+index+" 线程池数字  "+ Thread.currentThread().getId() + "--->" + Thread.currentThread().getName());
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
+
+        threadPoolExecutor.shutdown();
+    }
+
+    /**
+     * DiscardPolicy   当任务添加到线程池中被拒绝时，线程池将丢弃被拒绝的任务。
+     */
+    public void createPoolDiscardPolicy() {
+
+        BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(5);
+        ThreadPoolExecutor threadPoolExecutor =
+                new ThreadPoolExecutor(5, 10, 1000, TimeUnit.MILLISECONDS, workQueue, new ThreadPoolExecutor.DiscardPolicy());
+
+        for (int i = 0; i < 30; i++) {
+            final int index = i;
+            threadPoolExecutor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(1000);
+                        System.out.println("当前线程编号："+index+"  线程池 "+ Thread.currentThread().getId() + "--->" + Thread.currentThread().getName());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

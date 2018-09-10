@@ -18,7 +18,8 @@ public class MyThreadPool {
         MyThreadPool myThreadPool = new MyThreadPool();
 //        myThreadPool.createPoolOne();
 //        myThreadPool.createPoolAbort();
-        myThreadPool.createPoolCallerRuns();
+//        myThreadPool.createPoolCallerRuns();
+        myThreadPool.createPoolDiscardOldest();
 
     }
 
@@ -120,7 +121,33 @@ public class MyThreadPool {
         threadPoolExecutor.shutdown();
     }
 
+    /**
+     * DiscardOldestPolicy 当任务添加到线程池中被拒绝时，线程池会放弃等待队列中最旧的未处理任务，然后将被拒绝的任务添加到等待队列中。
+     */
+    public void createPoolDiscardOldest() {
 
+        BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(5);
+        ThreadPoolExecutor threadPoolExecutor =
+                new ThreadPoolExecutor(5, 10, 1000, TimeUnit.MILLISECONDS, workQueue, new ThreadPoolExecutor.DiscardOldestPolicy());
+
+        for (int i = 0; i < 30; i++) {
+            final int index = i;
+
+            threadPoolExecutor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(1000);
+                        System.out.println("当前线程编号："+index+"  线程池数字  "+ Thread.currentThread().getId() + "--->" + Thread.currentThread().getName());
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
+
+        threadPoolExecutor.shutdown();
+    }
 
 
 }

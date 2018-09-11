@@ -69,6 +69,10 @@
 
 以上集合不做code
 * CopyOnWrite容器  具体看源码的add方法
+常用的几种queue
+* ConcurrentLinkedQueue    非阻塞，性能很高
+* ArrayBlockingQueue       
+* LikedBlockingQueue  
 
 #### 线程池
 `ThreadPoolPackage`

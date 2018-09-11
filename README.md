@@ -81,7 +81,7 @@
 * Executors中的cacheThreadPool
 * Executors中的schduleThreadPool
 * Executors中的singleThreadPool
-* 线程中callback和feture的简单使用
+* 线程中callback和fature的简单使用
 * 线程工厂的使用
 * 自定义线程池的使用及其饱和策略
 

@@ -11,19 +11,23 @@ package ThreadPackage;
 public class StartThead {
     public static void main(String[] args) {
 
-        //1.  创建实例
+        /**
+         * 继承Thread类的两种启动方式
+         * 1.  创建实例
+         * 2.  创建对象，放入Thread中
+         */
         RunByThread runByThread = new RunByThread();
         runByThread.start();
-        System.out.println(runByThread.isInterrupted());
-        runByThread.interrupt();
-        System.out.println(runByThread.isInterrupted());
-        //2.  创建对象，放入Thread中
+
         Thread threadRun = new Thread(new RunByThread());
         threadRun.start();
-        threadRun.isInterrupted();
 
 
-        //创建对象，放入Thread中
+        /**
+         * 实现Runnable接口启动线程的方式
+         *
+         * 创建对象，放入Thread中
+         */
         Thread thread = new Thread(new RunByRunnable(), "runByThread");
         thread.start();
 

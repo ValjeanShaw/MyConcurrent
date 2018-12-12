@@ -1,10 +1,10 @@
 # Java并发编程
 > 推荐书籍《java并发编程的艺术》  
-> 此项目，为并发基础项目，内容涵盖了Java基础到高级的并发知识。
+> 此项目以案例为主，力求针对java的各个并发知识做出示例。
 
 
 ## 项目结构
- * ThreadPackage         java线程基础包
+ * ThreadPackage         java线程基础知识
  * SynchronizedPackage   synchronized相关知识
  * VolatilePackage       volatile相关知识
  * LockPackage           java锁的知识

@@ -12,13 +12,12 @@
  * DesignPatterns        多线程相关的设计模式
  * ConcurrentUtils       JDK提供的并发的工具类
  
- **接下来请看详细内容**
  
 ## 代码涵盖的知识点
 
 ### 1.并发基础
 
-#### 线程基础
+#### 1.1 线程基础
 `ThreadPackage`
 
 线程状态
@@ -40,7 +39,7 @@
 实例
 使用wait和notify模拟一个阻塞队列
 
-#### synchonized
+#### 1.2 synchonized
 
 `SynchronizedPackage`
 * synchronized方法的基本使用
@@ -48,13 +47,13 @@
     1. synchronized锁是可重入锁：当前对象不同方法可重入；父子类方法相互调用可重入。
     2. synchronized锁抛出异常时，会释放锁（异常抛出当前锁控制的区域）
    
-#### valotile 
+#### 1.3 valotile 
 `VolatilePackage`
 * volatile 关键字的基本使用
 * volatile 关键字的非原子性验证，以及原子类 AtomicInteger的操作
     
  
-#### 设计模式
+#### PS 设计模式
 `DesignPatterns`
 * 多线程情况下，使用较多的两种单例模式
     1. 静态内部类 （推荐使用）
@@ -62,7 +61,7 @@
     
 ### 2.并发进阶
 
-#### 一些基础的并发类容器
+#### 2.1 一些基础的并发类容器
 `ConcurrentCollecntions`
 * Vector
 * ConcurrentHashMap (设计原理比较重要，经常拿来和HashMap进行比较)
@@ -74,7 +73,7 @@
 * ArrayBlockingQueue       
 * LikedBlockingQueue  
 
-#### 线程池
+#### 2.2 线程池
 `ThreadPoolPackage`
 * Executors和Executor
 * Executors中fixThreadPool
@@ -85,13 +84,13 @@
 * 线程工厂的使用
 * 自定义线程池的使用及其饱和策略
 
-#### 并发工具类
+#### 2.3 并发工具类
 `ConcurrentUtils`
 * CountDownLtch的使用
 * CyclicBarrier的使用
 * Semaphore的使用
 
-#### java中的Lock
+#### 2.4 java中的Lock
 `LockPackage`
 * Lock的基本模型
 * ReentrantLock的使用

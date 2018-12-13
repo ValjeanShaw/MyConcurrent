@@ -22,9 +22,10 @@
 
 线程状态
 
-* java线程创建基础，两种创建模式
-    1. 集成Thread类
-    2. 实现Runnable接口
+* java线程创建基础，两种创建模式，不严格意义还有一种Executor工具类提供的方式
+    1. 继承Thread类,重写run方法
+    2. 实现Runnable接口,重写run方法
+    3. 实现Callable接口，重写call方法(不严格意义,java 1.5之后提供)
 * 线程的启动
 * 守护线程（Daemon Thread）的概念和使用
 * 加入线程中断概念和使用  interrupt
@@ -39,7 +40,7 @@
 实例
 使用wait和notify模拟一个阻塞队列
 
-#### 1.2 synchonized
+#### 1.2 synchonized 关键字
 
 `SynchronizedPackage`
 * synchronized方法的基本使用
@@ -47,13 +48,13 @@
     1. synchronized锁是可重入锁：当前对象不同方法可重入；父子类方法相互调用可重入。
     2. synchronized锁抛出异常时，会释放锁（异常抛出当前锁控制的区域）
    
-#### 1.3 valotile 
+#### 1.3 valotile 关键字
 `VolatilePackage`
 * volatile 关键字的基本使用
 * volatile 关键字的非原子性验证，以及原子类 AtomicInteger的操作
     
  
-#### PS 设计模式
+#### PS 部分设计模式
 `DesignPatterns`
 * 多线程情况下，使用较多的两种单例模式
     1. 静态内部类 （推荐使用）

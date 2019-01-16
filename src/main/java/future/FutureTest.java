@@ -54,6 +54,7 @@ public class FutureTest {
         try {
             System.out.println("callable中call方法执行的结果是：" + future3.get(0, TimeUnit.NANOSECONDS));
         } catch (TimeoutException e) {
+            future3.cancel(true);
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -1,4 +1,5 @@
 # Java并发编程
+![GitHub top language](https://img.shields.io/github/languages/top/ValjeanShaw/MyConcurrent.svg)
 > 推荐书籍《java并发编程的艺术》  
 > 此项目以案例为主，力求针对java的各个并发知识做出示例。
 
@@ -97,3 +98,7 @@
 * ReentrantLock的使用
 * ReentrantLock公平锁的使用
 * WriteReadLock的使用
+##### lock相关使用实例
+* 自定义同步组件，重写lock中的同步器，实现一种能容许同时最多两个线程的锁
+* 使用读写锁和hashmap实现一个线程安全,性能较高的cache
+* 使用condition实现一个有界队列，拥有满载及时阻塞，空闲通知插入的功能

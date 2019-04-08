@@ -27,7 +27,41 @@ public class MyThreadPool {
 //        myThreadPool.createPoolCallerRuns();
 //        myThreadPool.createPoolDiscardOldest();
 //        myThreadPool.createPoolDiscardPolicy();
-        myThreadPool.createPoolMyReject();
+//        myThreadPool.createPoolMyReject();
+        myThreadPool.createPool();
+    }
+
+    /**
+     * 测试线程池从初始化到最大再到空闲，其中的线程数变化
+     */
+    public void createPool() {
+        BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(5);
+        ThreadPoolExecutor threadPoolExecutor
+                = new ThreadPoolExecutor(3, 5, 1000, TimeUnit.MILLISECONDS, workQueue);
+        System.out.println("未提交线程时线程池中数量：" + threadPoolExecutor.getPoolSize());
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println("当前线程池中数量："+threadPoolExecutor.getPoolSize());
+            threadPoolExecutor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    try{
+                        Thread.sleep(20);
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+
+                }
+            });
+        }
+
+        try{
+            Thread.sleep(10000);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        System.out.println("所有任务都执行完毕后，池中的线程数量：" + threadPoolExecutor.getPoolSize());
 
     }
 

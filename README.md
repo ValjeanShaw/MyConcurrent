@@ -1,10 +1,15 @@
 # Java并发编程
 ![GitHub top language](https://img.shields.io/github/languages/top/ValjeanShaw/MyConcurrent.svg)
+![](https://img.shields.io/badge/Knowledge-concurrent-green.svg)
+
 > 推荐书籍《java并发编程的艺术》  
 > 此项目以案例为主，力求针对java的各个并发知识做出示例。
 
 
 ## 内容简介
+
+![](https://img.shields.io/badge/tag-%E7%AE%80%E4%BB%8B-blue.svg)
+
 
 并发基础
 
@@ -27,6 +32,8 @@
 
  
 ## 代码涵盖的知识点
+
+![](https://img.shields.io/badge/tag-%E8%AF%A6%E7%BB%86-blue.svg)
 
 ### 1.并发基础
 

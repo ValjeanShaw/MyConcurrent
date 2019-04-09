@@ -1,4 +1,4 @@
-package future;
+package FuturePackage;
 
 import java.util.concurrent.Callable;
 

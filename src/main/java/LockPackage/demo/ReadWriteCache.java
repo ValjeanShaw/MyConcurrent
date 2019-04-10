@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * @author: xiaoran
  * @date: 2019-04-08 10:04
  */
-public class Cache {
+public class ReadWriteCache {
     static Map<String, Object> map = new HashMap<>();
     static ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
     static Lock readLock = readWriteLock.readLock();

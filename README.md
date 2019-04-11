@@ -98,15 +98,22 @@
 
 [ConcurrentCollecntions](https://github.com/ValjeanShaw/MyConcurrent/tree/develop/src/main/java/ConcurrentCollections)
 
-* Vector
-* ConcurrentHashMap (设计原理比较重要，经常拿来和HashMap进行比较)
+* ConcurrentHashMap
+* CopyOnWrite容器 
+##### 线程安全的队列
+* 非阻塞队列  
+1. ConcurrentLinkedQueue    
+* 阻塞队列  7种
+1. ArrayBlockingQueue
+2. LikedBlockingQueue     
+3. PriorityBlockingQueue
+4. DelayQueue
+5. SynchronousQueue
+6. LinkedTransferQueue
+7. LinkedBlockingDeque
 
-以上集合不做code
-* CopyOnWrite容器  具体看源码的add方法
-常用的几种queue
-* ConcurrentLinkedQueue    非阻塞，性能很高
-* ArrayBlockingQueue       
-* LikedBlockingQueue  
+##### 性能对比 Demo
+ConcurrentHashMap和ReadWriteLock+HashMap 在读多写少大并发场景下性能对比
 
 #### 2.3 JDK的原子操作类
 `Waiting in line`

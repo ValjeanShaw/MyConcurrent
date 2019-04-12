@@ -103,7 +103,17 @@
 ##### 线程安全的队列
 * 非阻塞队列  
 1. ConcurrentLinkedQueue    
-* 阻塞队列  7种
+* 阻塞队列 
+
+4种处理方式
+
+1. 抛异常
+2. 返回特殊值
+3. 阻塞
+4. 超时退出 
+
+7种类型队列
+
 1. ArrayBlockingQueue
 2. LikedBlockingQueue     
 3. PriorityBlockingQueue

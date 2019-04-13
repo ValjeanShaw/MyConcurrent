@@ -122,6 +122,9 @@
 6. LinkedTransferQueue
 7. LinkedBlockingDeque
 
+框架
+* fork/join框架
+
 ##### 性能对比 Demo
 ConcurrentHashMap和ReadWriteLock+HashMap 在读多写少大并发场景下性能对比
 

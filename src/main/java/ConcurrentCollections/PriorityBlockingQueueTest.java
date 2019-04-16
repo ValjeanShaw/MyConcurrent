@@ -17,8 +17,6 @@ public class PriorityBlockingQueueTest {
     /**
      * 支持优先级的无界阻塞队列
      */
-    private PriorityBlockingQueue priorityBlockingQueue = new PriorityBlockingQueue();
-
     public static PriorityBlockingQueue<User> queue = new PriorityBlockingQueue<>();
 
     public static void main(String[] args) {

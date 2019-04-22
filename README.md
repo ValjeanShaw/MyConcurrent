@@ -139,6 +139,7 @@ ConcurrentHashMap和ReadWriteLock+HashMap 在读多写少大并发场景下性�
 * CountDownLtch的使用
 * CyclicBarrier的使用
 * Semaphore的使用
+* Exchanger的使用
 
 #### 2.5 线程池和Executor框架
 `Waiting in line`

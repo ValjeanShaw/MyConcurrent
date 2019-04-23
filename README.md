@@ -94,7 +94,6 @@
 * 使用condition实现一个有界队列，拥有满载及时阻塞，空闲通知插入的功能
 
 #### 2.2 一些基础的并发类容器和框架
-`updating`
 
 [ConcurrentCollecntions](https://github.com/ValjeanShaw/MyConcurrent/tree/develop/src/main/java/ConcurrentCollections)
 

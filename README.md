@@ -132,7 +132,6 @@ ConcurrentHashMap和ReadWriteLock+HashMap 在读多写少大并发场景下性�
 `Waiting in line`
 
 #### 2.4 并发工具类
-`Waiting in line`
 
 [ConcurrentUtils](https://github.com/ValjeanShaw/MyConcurrent/tree/develop/src/main/java/ConcurrentUtils)
 

@@ -2,7 +2,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author 600006
+ * @author xiaoran
  * @version 1.0
  */
 public class Test {

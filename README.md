@@ -128,7 +128,17 @@
 ConcurrentHashMap和ReadWriteLock+HashMap 在读多写少大并发场景下性能对比
 
 #### 2.3 JDK的原子操作类
-`Waiting in line`
+
+[AtomicPackage](https://github.com/ValjeanShaw/MyConcurrent/tree/develop/src/main/java/AtomicPackage)
+
+* 原子更新基本类型类
+    1. AtomicBoolean
+    2. AtomicInteger
+    3. AtomicLong
+* 原子更新数组类型类
+    1. AtomicIntegerArray
+    2. AtomicLongArray
+    3. AtomicReferenceArray<E>
 
 #### 2.4 并发工具类
 

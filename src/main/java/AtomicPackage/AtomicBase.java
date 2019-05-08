@@ -32,6 +32,9 @@ public class AtomicBase {
         System.out.println(atomicBase.atomicInteger.getAndSet(1099));
         System.out.println(atomicBase.atomicLong.getAndSet(9999L));
 
+        atomicBase.atomicInteger.getAndIncrement();
+        atomicBase.atomicLong.decrementAndGet();
+
         System.out.println(atomicBase.atomicBoolean.get());
         System.out.println(atomicBase.atomicInteger.get());
         System.out.println(atomicBase.atomicLong.get());

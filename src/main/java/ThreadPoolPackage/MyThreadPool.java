@@ -38,10 +38,10 @@ public class MyThreadPool {
         BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(5);
         ThreadPoolExecutor threadPoolExecutor
                 = new ThreadPoolExecutor(3, 5, 1000, TimeUnit.MILLISECONDS, workQueue);
-        System.out.println("未提交线程时线程池中数量：" + threadPoolExecutor.getPoolSize());
+        System.out.println("未提交线程时线程池中数量：" + threadPoolExecutor.getActiveCount());
 
         for (int i = 0; i < 10; i++) {
-            System.out.println("当前线程池中数量："+threadPoolExecutor.getPoolSize());
+            System.out.println("当前线程池中数量："+threadPoolExecutor.getActiveCount());
             threadPoolExecutor.execute(new Runnable() {
                 @Override
                 public void run() {
@@ -62,6 +62,9 @@ public class MyThreadPool {
         }
 
         System.out.println("所有任务都执行完毕后，池中的线程数量：" + threadPoolExecutor.getPoolSize());
+        System.out.println("所有任务都执行完毕后，池中活跃的线程数量：" + threadPoolExecutor.getActiveCount());
+        System.out.println("所有任务都执行完毕后，曾经出现过最大线程数量：" + threadPoolExecutor.getLargestPoolSize());
+        threadPoolExecutor.shutdown();
 
     }
 

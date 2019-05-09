@@ -5,13 +5,16 @@ import java.util.concurrent.atomic.AtomicLongArray;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 
 /**
+ * 含有3种类型
+ *
+ * AtomicIntegerArray
+ * AtomicLongArray
+ * AtomicReferenceArray
+ *
  * @author xiaoran
  * @date 2019/05/08
  */
 public class AtomicArray {
-    /**
-     * 含有三种类型
-     */
 
     /**
      * 整型数组

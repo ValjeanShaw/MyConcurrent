@@ -139,6 +139,10 @@ ConcurrentHashMap和ReadWriteLock+HashMap 在读多写少大并发场景下性�
     1. AtomicIntegerArray
     2. AtomicLongArray
     3. AtomicReferenceArray<E>
+* 原子更新引用类型
+    1. AtomicReference
+    2. AtomicReferenceFieldUpdater
+    3. AtomicMarkableReference
 
 #### 2.4 并发工具类
 

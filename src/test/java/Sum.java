@@ -1,5 +1,5 @@
 /**
- * @author 600006
+ * @author xiaoran
  * @version 1.0
  */
 public class Sum extends Base {

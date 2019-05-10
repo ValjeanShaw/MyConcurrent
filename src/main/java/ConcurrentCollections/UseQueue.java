@@ -116,7 +116,7 @@ public class UseQueue {
         useQueue.arrayBlockingQueue.add("4-5-6");
 
         /**
-         * 抛出异常
+         * 返回值
          * 插入  offer(e)       返回值   满：true  不满：false
          * 移出  poll()         返回值   不空：队列头元素  空：null
          * 检查  peek()         返回值   不空：队列头元素  空：null
@@ -149,7 +149,7 @@ public class UseQueue {
         arrayBlockingQueue.add("4-5-6");
 
         /**
-         * 抛出异常
+         * 阻塞
          * 插入  put(e)         返回值   满：阻塞  不满：不阻塞
          * 移出  take()         返回值   空：阻塞  不空：不阻塞
          *

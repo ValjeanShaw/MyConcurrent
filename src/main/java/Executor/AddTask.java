@@ -1,4 +1,4 @@
-package ThreadPoolPackage;
+package Executor;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;

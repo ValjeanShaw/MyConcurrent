@@ -1,4 +1,6 @@
-package ThreadPoolPackage;
+package Executor;
+
+import ThreadPoolPackage.PrintTask;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;

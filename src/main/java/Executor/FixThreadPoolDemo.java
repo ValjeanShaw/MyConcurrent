@@ -1,10 +1,14 @@
-package ThreadPoolPackage;
+package Executor;
+
+import ThreadPoolPackage.PrintTask;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
  * 最开始该线程池中的线程数为0，之后每提交一个任务就会创建一个线程，直到线程数等于指定的nThreads参数，此后线程数量将不再变化。
+ *
+ * 固定线程数，适用于负载较重服务
  */
 public class FixThreadPoolDemo {
 

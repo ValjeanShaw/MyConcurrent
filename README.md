@@ -157,22 +157,28 @@ ConcurrentHashMap和ReadWriteLock+HashMap 在读多写少大并发场景下性�
 * Semaphore的使用
 * Exchanger的使用
 
-#### 2.5 线程池和Executor框架
-`Waiting in line`
+#### 2.5 线程池
 
 [ThreadPoolPackage](https://github.com/ValjeanShaw/MyConcurrent/tree/develop/src/main/java/ThreadPoolPackage)
 
-* Executors和Executor
-* Executors中fixThreadPool
-* Executors中的cacheThreadPool
-* Executors中的schduleThreadPool
-* Executors中的singleThreadPool
-* 线程中callback和fature的简单使用
 * 线程工厂的使用
 * 自定义线程池的使用及其饱和策略
 
-#### 2.6 Future和FutureTask模式
-`Waiting in line`
+#### 2.6 Executor框架
+
+[Executor](https://github.com/ValjeanShaw/MyConcurrent/tree/develop/src/main/java/Executor)
+
+主要成员
+* ThreadPollExecutor（最核心）
+    1. singleThreadPool
+    2. fixThreadPool
+    3. cacheThreadPool
+* ScheduledThreadPoolExecutor
+    1. ScheduledThreadPoolExecutor
+    2. SingleThreadScheduledExecutor
+* Future接口
+* Runnable接口和Callable接口
+* Executors工厂类
 
 [FuturePackage](https://github.com/ValjeanShaw/MyConcurrent/tree/develop/src/main/java/FuturePackage)
 

@@ -178,10 +178,8 @@ ConcurrentHashMap和ReadWriteLock+HashMap 在读多写少大并发场景下性�
     2. SingleThreadScheduledExecutor
 * Future接口
 * Runnable接口和Callable接口
+* FutureTask的使用
 * Executors工厂类
-
-[FuturePackage](https://github.com/ValjeanShaw/MyConcurrent/tree/develop/src/main/java/FuturePackage)
-
 
 ### 3.并发编程实战
 `Waiting in line`

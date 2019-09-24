@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author xiaoran
  * @date 2019/09/16
  */
-public class SortPrint {
+public class SortPrintByAtomic {
 
     public static void main(String[] args) {
         AtomicInteger globalCount = new AtomicInteger(0);

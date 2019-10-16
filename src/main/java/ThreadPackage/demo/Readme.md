@@ -7,3 +7,4 @@ ABCABCABC
 * synchronize方式实现
 * lock方式实现
 * Condition方式实现
+* Semaphore方式实现

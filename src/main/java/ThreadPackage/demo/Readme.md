@@ -4,4 +4,5 @@
 ABCABCABC
 
 * AtomicInteger方式实现
-* wait + notify 方式实现（wait notify必须配合synchronize关键字一起使用）
+* synchronize方式实现
+* lock方式实现

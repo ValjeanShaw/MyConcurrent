@@ -4,4 +4,4 @@
 ABCABCABC
 
 * AtomicInteger方式实现
-* 
+* wait + notify 方式实现（wait notify必须配合synchronize关键字一起使用）

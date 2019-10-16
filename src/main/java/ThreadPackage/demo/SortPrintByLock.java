@@ -11,7 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author xiaoran
  * @date 2019/10/16
  */
-public class SortPringByLock {
+public class SortPrintByLock {
 
     public static void main(String[] args) {
         Lock lock = new ReentrantLock();

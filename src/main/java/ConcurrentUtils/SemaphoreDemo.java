@@ -16,8 +16,8 @@ import java.util.concurrent.Semaphore;
  *
  * 信号量控制，只能有规定数量的进入信号量流程中
  * 信号量控制流程：
- * 信号量开始：acquire
- * 信号量结束：release
+ * 信号量开始：acquire  减少一个信号量
+ * 信号量结束：release  增加一个信号量
  *
  */
 public class SemaphoreDemo {

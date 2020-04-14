@@ -18,10 +18,13 @@ public class MyThreadFactory implements ThreadFactory {
     }
 
     public static void main(String[] args) {
-        PrintTask printTask = new PrintTask();
         MyThreadFactory myThreadFactory = new MyThreadFactory();
-        Thread thread = myThreadFactory.newThread(printTask);
-        thread.start();
+        Thread thread = myThreadFactory.newThread(new Runnable() {
+            @Override
+            public void run() {
 
+            }
+        });
+        thread.start();
     }
 }

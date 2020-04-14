@@ -37,16 +37,17 @@ public class MyThreadPool {
     public void createPool() {
         BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(5);
         ThreadPoolExecutor threadPoolExecutor
-                = new ThreadPoolExecutor(3, 5, 1000, TimeUnit.MILLISECONDS, workQueue);
-        System.out.println("未提交线程时线程池中数量：" + threadPoolExecutor.getActiveCount());
+                = new ThreadPoolExecutor(3, 5, 0, TimeUnit.MILLISECONDS, workQueue);
 
+        System.out.println("未提交线程时线程池中数量：" + threadPoolExecutor.getActiveCount());
+        //threadPoolExecutor.prestartAllCoreThreads();
         for (int i = 0; i < 10; i++) {
-            System.out.println("当前线程池中数量："+threadPoolExecutor.getActiveCount());
+            System.out.println("当前线程池中数量："+threadPoolExecutor.getPoolSize());
             threadPoolExecutor.execute(new Runnable() {
                 @Override
                 public void run() {
                     try{
-                        Thread.sleep(20);
+                        Thread.sleep(1000);
                     }catch (Exception e){
                         e.printStackTrace();
                     }
@@ -60,11 +61,13 @@ public class MyThreadPool {
         }catch (Exception e){
             e.printStackTrace();
         }
+        while(true){
+            System.out.println("所有任务都执行完毕后，池中的线程数量：" + threadPoolExecutor.getPoolSize());
+            System.out.println("所有任务都执行完毕后，池中活跃的线程数量：" + threadPoolExecutor.getActiveCount());
+            System.out.println("所有任务都执行完毕后，曾经出现过最大线程数量：" + threadPoolExecutor.getLargestPoolSize());
+        }
 
-        System.out.println("所有任务都执行完毕后，池中的线程数量：" + threadPoolExecutor.getPoolSize());
-        System.out.println("所有任务都执行完毕后，池中活跃的线程数量：" + threadPoolExecutor.getActiveCount());
-        System.out.println("所有任务都执行完毕后，曾经出现过最大线程数量：" + threadPoolExecutor.getLargestPoolSize());
-        threadPoolExecutor.shutdown();
+
 
     }
 
@@ -113,7 +116,6 @@ public class MyThreadPool {
         BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(5);
         ThreadPoolExecutor threadPoolExecutor =
                 new ThreadPoolExecutor(5, 10, 1000, TimeUnit.MILLISECONDS, workQueue, new ThreadPoolExecutor.AbortPolicy());
-
         for (int i = 0; i < 30; i++) {
             threadPoolExecutor.execute(new Runnable() {
                 @Override
